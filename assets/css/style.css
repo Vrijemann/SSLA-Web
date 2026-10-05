@@ -329,3 +329,16 @@ section[id] { scroll-margin-top: 64px; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Blok konsultasi di bawah hero ---------- */
+.hero__cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px var(--gutter); }
+.hero__strip .hero__cta-text { display: block; padding: 0; margin: 0; font-family: var(--display); font-size: clamp(24px, 2.6vw, 32px); font-weight: 500; color: #fff; }
+@media (max-width: 640px) { .hero__cta { flex-direction: column; align-items: flex-start; gap: 16px; } }
+
+/* ---------- Ornamen awan (gambar vektor) ---------- */
+img.awan { height: auto; display: block; }
+.hero__awan--1 { width: min(600px, 62vw); right: -40px; top: 18%; opacity: .32; }
+.hero__awan--2 { width: min(300px, 42vw); left: -50px; bottom: 22%; opacity: .14; transform: none; }
+.section__awan { width: 380px; opacity: .1; }
+.page-hero__awan { width: 420px; right: -50px; bottom: 10px; opacity: .2; }
+.site-footer__awan { width: 340px; opacity: .07; }

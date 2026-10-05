@@ -1,6 +1,6 @@
 {%- assign home = '/' | relative_url -%}
 <footer class="site-footer">
-  {% include awan.html class="site-footer__awan" %}
+  {% include awan.html class="site-footer__awan" jenis="b" %}
   <div class="container site-footer__grid">
     <div class="site-footer__brand">
       {% include wordmark.html %}
@@ -26,7 +26,7 @@
     <div>
       <h2 class="site-footer__heading">Jelajahi</h2>
       <ul class="site-footer__list">
-        <li><a href="{{ home }}#bidang-praktik">Bidang Praktik</a></li>
+        <li><a href="{{ home }}#layanan">Layanan Kami</a></li>
         <li><a href="{{ home }}#tim">Tim</a></li>
         <li><a href="{{ '/legal-insight/' | relative_url }}">Legal Insight</a></li>
       </ul>

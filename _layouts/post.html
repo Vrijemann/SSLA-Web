@@ -6,7 +6,7 @@ layout: default
 {%- assign menit = kata | divided_by: 200 | plus: 1 -%}
 <article class="article">
   <header class="article__header">
-    {% include awan.html class="page-hero__awan" %}
+    {% include awan.html class="page-hero__awan" jenis="a" %}
     <div class="container container--narrow">
       <p class="eyebrow"><a href="{{ '/legal-insight/' | relative_url }}?kategori={{ page.category }}">{{ kat.nama | default: "Legal Insight" }}</a></p>
       <h1 class="article__title">{{ page.title }}</h1>

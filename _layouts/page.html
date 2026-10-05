@@ -1,12 +1,10 @@
 ---
 layout: default
 ---
-<section class="page-hero">
-  {% include awan.html class="page-hero__awan" %}
+<section class="page-head">
   <div class="container">
-    {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
-    <h1>{{ page.title }}</h1>
-    {% if page.lead %}<p class="page-hero__lead">{{ page.lead }}</p>{% endif %}
+    <h1 class="h-page">{{ page.title }}</h1>
+    {% if page.lead %}<p class="page-head__lead">{{ page.lead }}</p>{% endif %}
   </div>
 </section>
 {{ content }}

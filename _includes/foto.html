@@ -1,0 +1,9 @@
+{%- comment -%} Slot foto. Isi "src" dengan alamat foto; bila kosong, tampil panel navy bermotif awan. {%- endcomment -%}
+{%- if include.src -%}
+<img class="foto {{ include.class }}" src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+{%- else -%}
+<div class="foto foto--kosong {{ include.class }}" role="img" aria-label="{{ include.alt }}">
+  {% include awan.html stroke=1.1 %}
+  <span class="foto__label">Slot foto</span>
+</div>
+{%- endif -%}

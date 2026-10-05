@@ -1,0 +1,31 @@
+---
+layout: page
+title: Mari Diskusikan Langkah Hukum Anda.
+lead: Kami menerima konsultasi berdasarkan janji temu dan berharap dapat mendampingi Anda dalam setiap langkah penyelesaian persoalan hukum yang Anda hadapi.
+permalink: /contact/
+description: Hubungi Sagara Strategic Legal Advisory — Gedung Bursa Efek Indonesia, Tower 1, SCBD, Jakarta. Konsultasi berdasarkan janji temu.
+---
+<section class="section section--tight">
+  <div class="container">
+    <div class="contact-box">
+      <div class="contact-row">
+        <h2 class="h-small">Jadwal Konsultasi<span class="dash" aria-hidden="true"></span></h2>
+        <p>{{ site.firma.jam_konsultasi }}</p>
+      </div>
+      <div class="contact-row">
+        <h2 class="h-small">Pertanyaan Umum / FAQs<span class="dash" aria-hidden="true"></span></h2>
+        <div class="contact-btns">
+          <a class="btn btn--gold" href="{{ site.firma.janji_temu }}">{{ site.firma.email }}</a>
+          {% for t in site.firma.telepon %}<a class="btn btn--gold" href="tel:{{ t.nomor }}">{{ t.label }}</a>{% endfor %}
+        </div>
+      </div>
+      <div class="contact-row">
+        <h2 class="h-small">Kantor<span class="dash" aria-hidden="true"></span></h2>
+        <div>
+          <p>{{ site.firma.kantor }}<br>{% for baris in site.firma.alamat %}{{ baris }}<br>{% endfor %}</p>
+          <a class="link-gold" href="{{ site.firma.peta }}" target="_blank" rel="noopener">Lihat di peta →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

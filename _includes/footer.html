@@ -1,39 +1,11 @@
-{%- assign home = '/' | relative_url -%}
 <footer class="site-footer">
-  {% include awan.html class="site-footer__awan" %}
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
-      {% include wordmark.html %}
-      <p class="site-footer__tagline">Firm You Can Trust</p>
+  <div class="container site-footer__inner">
+    <div class="social">
+      <a class="social__btn social__btn--li" href="{{ site.firma.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.9 8.6H3.7V20h3.2V8.6zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.3 13.5c0-3-1.6-5.1-4.5-5.1-1.5 0-2.6.8-3 1.6V8.6H9.7V20h3.2v-5.9c0-1.6.7-2.8 2.2-2.8 1.4 0 2 1 2 2.8V20h3.2v-6.5z"/></svg></a>
+      <a class="social__btn social__btn--ig" href="{{ site.firma.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
     </div>
-    <div>
-      <h2 class="site-footer__heading">Kantor</h2>
-      <address>
-        {{ site.firma.kantor }}<br>
-        {% for baris in site.firma.alamat %}{{ baris }}<br>{% endfor %}
-      </address>
-    </div>
-    <div>
-      <h2 class="site-footer__heading">Hubungi</h2>
-      <ul class="site-footer__list">
-        <li>{{ site.firma.jam_konsultasi }}</li>
-        {% for t in site.firma.telepon %}<li><a href="tel:{{ t.nomor }}">{{ t.label }}</a></li>{% endfor %}
-        <li><a href="{{ site.firma.janji_temu }}">{{ site.firma.email }}</a></li>
-        <li><a href="{{ site.firma.linkedin }}" rel="noopener" target="_blank">LinkedIn</a></li>
-        <li><a href="{{ site.firma.instagram }}" rel="noopener" target="_blank">Instagram</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="site-footer__heading">Jelajahi</h2>
-      <ul class="site-footer__list">
-        <li><a href="{{ home }}#bidang-praktik">Bidang Praktik</a></li>
-        <li><a href="{{ home }}#tim">Tim</a></li>
-        <li><a href="{{ '/legal-insight/' | relative_url }}">Legal Insight</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="container site-footer__legal">
-    <p>Informasi di situs ini bersifat umum dan tidak dimaksudkan sebagai nasihat hukum. Mengakses situs ini atau menghubungi kami tidak dengan sendirinya menimbulkan hubungan advokat dan klien.</p>
-    <p>&copy; {{ site.time | date: "%Y" }} Sagara Strategic Legal Advisory</p>
+    <p class="site-footer__address">Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304, SCBD, Jakarta Selatan, DKI Jakarta – 12190</p>
+    <p class="site-footer__legal">Informasi di situs ini bersifat umum dan tidak dimaksudkan sebagai nasihat hukum. Mengakses situs ini atau menghubungi kami tidak dengan sendirinya menimbulkan hubungan advokat dan klien.</p>
+    <p class="site-footer__copy">Copyright &copy; {{ site.time | date: "%Y" }} Sagara Strategic Legal Advisory. All rights reserved</p>
   </div>
 </footer>

@@ -1,29 +1,33 @@
 ---
 layout: page
-title: Legal Insight
-eyebrow: Sagara Strategic Legal Advisory
-lead: Ulasan hukum praktis untuk pelaku usaha — membaca tanda-tanda risiko sebelum berubah menjadi perkara.
+title: Insight & Updates
 redirect_from:
   - /blogs/
-description: Artikel dan ulasan hukum dari Sagara Strategic Legal Advisory tentang litigasi, kepailitan dan PKPU, arbitrase, kepatuhan regulasi, dan advisory.
+description: Artikel dan ulasan hukum dari Sagara Strategic Legal Advisory tentang litigasi, kepailitan dan PKPU, kontrak, kepatuhan regulasi, dan advisory.
 ---
 <section class="section section--tight">
-  <div class="container">
-    <div class="filter" role="group" aria-label="Saring berdasarkan kategori">
-      <button type="button" class="filter__btn is-active" data-filter="semua">Semua</button>
-      {% for k in site.data.kategori %}<button type="button" class="filter__btn" data-filter="{{ k.id }}">{{ k.nama }}</button>{% endfor %}
+  <div class="container blog">
+    <aside class="blog__side">
+      <div class="side-box">
+        <h2 class="h-small">Categories</h2>
+        <ul class="side-cats" role="group" aria-label="Saring berdasarkan kategori">
+          <li><button type="button" class="filter__btn is-active" data-filter="semua">Semua <span>({{ site.posts.size }})</span></button></li>
+          {% for k in site.data.kategori %}{% assign n = site.posts | where: "category", k.id %}{% if n.size > 0 %}<li><button type="button" class="filter__btn" data-filter="{{ k.id }}">{{ k.nama }} <span>({{ n.size }})</span></button></li>{% endif %}{% endfor %}
+        </ul>
+      </div>
+      <a class="side-rss" href="{{ '/legal-insight/feed.xml' | relative_url }}">Subscribe to RSS Feed</a>
+    </aside>
+    <div class="blog__list" id="daftarArtikel">
+      {% for post in site.posts %}
+      {%- assign kat = site.data.kategori | where: "id", post.category | first -%}
+      <article class="post-card" data-kategori="{{ post.category }}">
+        <h2 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="post-card__by">By {{ post.author | default: "Sagara Strategic Legal Advisory" }} · {{ kat.nama }}</p>
+        {% if post.description %}<p class="post-card__excerpt">"{{ post.description }}"</p>{% endif %}
+        <p class="post-card__meta"><time datetime="{{ post.date | date_to_xmlschema }}">{% include tanggal.html date=post.date %}</time><a class="link-gold" href="{{ post.url | relative_url }}">Read more</a></p>
+      </article>
+      {% endfor %}
+      <p class="empty-note" id="kosongKategori" hidden>Belum ada artikel dalam kategori ini.</p>
     </div>
-
-    {% if site.posts.size > 0 %}
-    <div class="post-grid" id="daftarArtikel">
-      {% for post in site.posts %}{% include kartu-artikel.html post=post %}{% endfor %}
-    </div>
-    <p class="empty-note empty-note--filter" id="kosongKategori" hidden>Belum ada artikel dalam kategori ini.</p>
-    {% else %}
-    <div class="empty-note">
-      <p>Artikel pertama akan segera terbit. Sementara itu, ulasan kami dapat diikuti melalui LinkedIn.</p>
-      <a class="link-arrow" href="{{ site.firma.linkedin }}" target="_blank" rel="noopener">Sagara Strategic Legal Advisory di LinkedIn <span aria-hidden="true">→</span></a>
-    </div>
-    {% endif %}
   </div>
 </section>

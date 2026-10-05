@@ -13,8 +13,8 @@ timezone: Asia/Jakarta
 # Alamat situs.
 # Selama masih di alamat GitHub sementara: url = https://vrijemann.github.io, baseurl = /SSLA-Web
 # Setelah domain sagarastrategic.com tersambung: url = https://sagarastrategic.com, baseurl = ""
-url: "https://vrijemann.github.io"
-baseurl: "/SSLA-Web"
+url: "https://sagarastrategic.com"
+baseurl: ""
 
 # Data kantor (dipakai di bagian Kontak dan footer)
 firma:

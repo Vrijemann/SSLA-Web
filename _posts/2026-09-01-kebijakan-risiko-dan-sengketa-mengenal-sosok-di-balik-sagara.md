@@ -1,7 +1,7 @@
 ---
 title: "Kebijakan, Risiko, dan Sengketa: Mengenal Sosok di Balik Sagara"
 date: 2026-09-01 22:36:00 +0700
-category: di-balik-sagara
+category: sagara-insider
 description: "Dari riset kebijakan publik, analisis risiko korporat, hingga litigasi — sebuah perjalanan karier Aulia yang membentuk identitas Sagara Strategic Legal Advisory."
 author: Aulia Guzasiah
 tags: [SSLA, leader, partner]

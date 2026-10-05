@@ -34,9 +34,10 @@ Paragraf berikutnya. Teks **tebal** ditulis dengan dua bintang.
 |---|---|
 | `litigasi` | Litigasi & Sengketa Bisnis |
 | `kepailitan-pkpu` | Kepailitan & PKPU |
+| `kontrak` | Kontrak & Transaksi Bisnis |
 | `arbitrase` | Arbitrase & Penyelesaian Alternatif |
 | `kepatuhan` | Kepatuhan & Regulasi |
 | `advisory` | General Legal Advisory |
-| `di-balik-sagara` | Di Balik Sagara |
+| `sagara-insider` | Sagara Insider |
 
 Penutup "Firm you can trust — Sagara Strategic Legal Advisory" dan catatan bahwa artikel bukan nasihat hukum ditambahkan otomatis di setiap artikel, sehingga tidak perlu ditulis ulang.

@@ -49,7 +49,13 @@ plugins:
 feed:
   path: legal-insight/feed.xml
 
+logo: /assets/img/logo-sagara.png
+
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-sagara.png
   - scope:
       path: ""
       type: posts

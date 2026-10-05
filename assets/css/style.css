@@ -329,3 +329,17 @@ section[id] { scroll-margin-top: 64px; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Logo resmi ---------- */
+.hero__inner { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(32px, 5vw, 72px); }
+.hero__text { grid-column: 1; grid-row: 1; }
+.hero__logo { grid-column: 2; grid-row: 1; width: 100%; max-width: 480px; justify-self: end; }
+.hero__awan--1 { display: none; }
+.site-header__brand { transition: opacity .3s ease; }
+.layout-home .site-header:not(.is-scrolled) .site-header__brand { opacity: 0; pointer-events: none; }
+.site-footer__logo { width: 230px; margin-left: -10px; }
+@media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; gap: 28px; }
+  .hero__text, .hero__logo { grid-column: 1; grid-row: auto; }
+  .hero__logo { max-width: 260px; justify-self: start; margin-left: -6px; }
+}

@@ -1,0 +1,14 @@
+# Kategori Legal Insight.
+# "id" dipakai di setiap artikel (baris "category:"); "nama" adalah yang tampil di situs.
+- id: litigasi
+  nama: Litigasi & Sengketa Bisnis
+- id: kepailitan-pkpu
+  nama: Kepailitan & PKPU
+- id: arbitrase
+  nama: Arbitrase & Penyelesaian Alternatif
+- id: kepatuhan
+  nama: Kepatuhan & Regulasi
+- id: advisory
+  nama: General Legal Advisory
+- id: di-balik-sagara
+  nama: Di Balik Sagara

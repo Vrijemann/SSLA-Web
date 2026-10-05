@@ -1,0 +1,27 @@
+---
+layout: page
+title: Legal Insight
+eyebrow: Sagara Strategic Legal Advisory
+lead: Ulasan hukum praktis untuk pelaku usaha — membaca tanda-tanda risiko sebelum berubah menjadi perkara.
+description: Artikel dan ulasan hukum dari Sagara Strategic Legal Advisory tentang litigasi, kepailitan dan PKPU, arbitrase, kepatuhan regulasi, dan advisory.
+---
+<section class="section section--tight">
+  <div class="container">
+    <div class="filter" role="group" aria-label="Saring berdasarkan kategori">
+      <button type="button" class="filter__btn is-active" data-filter="semua">Semua</button>
+      {% for k in site.data.kategori %}<button type="button" class="filter__btn" data-filter="{{ k.id }}">{{ k.nama }}</button>{% endfor %}
+    </div>
+
+    {% if site.posts.size > 0 %}
+    <div class="post-grid" id="daftarArtikel">
+      {% for post in site.posts %}{% include kartu-artikel.html post=post %}{% endfor %}
+    </div>
+    <p class="empty-note empty-note--filter" id="kosongKategori" hidden>Belum ada artikel dalam kategori ini.</p>
+    {% else %}
+    <div class="empty-note">
+      <p>Artikel pertama akan segera terbit. Sementara itu, ulasan kami dapat diikuti melalui LinkedIn.</p>
+      <a class="link-arrow" href="{{ site.firma.linkedin }}" target="_blank" rel="noopener">Sagara Strategic Legal Advisory di LinkedIn <span aria-hidden="true">→</span></a>
+    </div>
+    {% endif %}
+  </div>
+</section>

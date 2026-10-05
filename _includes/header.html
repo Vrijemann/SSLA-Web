@@ -1,0 +1,17 @@
+{%- assign home = '/' | relative_url -%}
+<header class="site-header{% if page.layout != 'home' %} is-solid{% endif %}" id="siteHeader">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ home }}">{% include wordmark.html %}</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Navigasi utama">
+      <a href="{{ home }}#tentang">Tentang</a>
+      <a href="{{ home }}#pendekatan">Pendekatan</a>
+      <a href="{{ home }}#bidang-praktik">Bidang Praktik</a>
+      <a href="{{ home }}#tim">Tim</a>
+      <a href="{{ '/legal-insight/' | relative_url }}"{% if page.url contains '/legal-insight/' %} aria-current="page"{% endif %}>Legal Insight</a>
+      <a class="site-nav__contact" href="{{ home }}#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>

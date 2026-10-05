@@ -1,0 +1,61 @@
+# ------------------------------------------------------------
+# Pengaturan utama situs Sagara Strategic Legal Advisory
+# ------------------------------------------------------------
+title: Sagara Strategic Legal Advisory
+tagline: Firm You Can Trust
+description: >-
+  Firma hukum butik di Jakarta dengan pendekatan Risk and Crisis Management —
+  litigasi komersial dan perdata, pemulihan piutang, kepailitan dan PKPU,
+  dokumen hukum, serta ketenagakerjaan dan kepatuhan regulasi.
+lang: id_ID
+timezone: Asia/Jakarta
+
+# Alamat situs.
+# Selama masih di alamat GitHub sementara: url = https://vrijemann.github.io, baseurl = /SSLA-Web
+# Setelah domain sagarastrategic.com tersambung: url = https://sagarastrategic.com, baseurl = ""
+url: "https://vrijemann.github.io"
+baseurl: "/SSLA-Web"
+
+# Data kantor (dipakai di bagian Kontak dan footer)
+firma:
+  kantor: Infiniti Office
+  alamat:
+    - Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304
+    - Sudirman Central Business District (SCBD)
+    - Lot 9, Jl. Jend. Sudirman Kav. 52–53
+    - Kel. Senayan, Kec. Kebayoran Baru
+    - Jakarta Selatan 12190 – Indonesia
+  telepon:
+    - label: "+62 21 5890 5002"
+      nomor: "+622158905002"
+    - label: "+62 811 4666 901"
+      nomor: "+628114666901"
+  email: info@sagarastrategic.com
+  linkedin: https://www.linkedin.com/company/sagara-strategic-legal-advisory/
+  peta: https://www.google.com/maps/search/?api=1&query=Gedung+Bursa+Efek+Indonesia+Tower+1+SCBD+Jakarta
+
+# Artikel Legal Insight
+permalink: /legal-insight/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: legal-insight/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - PANDUAN-ARTIKEL.md

@@ -1,0 +1,37 @@
+{%- assign home = '/' | relative_url -%}
+<footer class="site-footer">
+  {% include awan.html class="site-footer__awan" %}
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      {% include wordmark.html %}
+      <p class="site-footer__tagline">Firm You Can Trust</p>
+    </div>
+    <div>
+      <h2 class="site-footer__heading">Kantor</h2>
+      <address>
+        {{ site.firma.kantor }}<br>
+        {% for baris in site.firma.alamat %}{{ baris }}<br>{% endfor %}
+      </address>
+    </div>
+    <div>
+      <h2 class="site-footer__heading">Hubungi</h2>
+      <ul class="site-footer__list">
+        {% for t in site.firma.telepon %}<li><a href="tel:{{ t.nomor }}">{{ t.label }}</a></li>{% endfor %}
+        <li><a href="mailto:{{ site.firma.email }}">{{ site.firma.email }}</a></li>
+        <li><a href="{{ site.firma.linkedin }}" rel="noopener" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="site-footer__heading">Jelajahi</h2>
+      <ul class="site-footer__list">
+        <li><a href="{{ home }}#bidang-praktik">Bidang Praktik</a></li>
+        <li><a href="{{ home }}#tim">Tim</a></li>
+        <li><a href="{{ '/legal-insight/' | relative_url }}">Legal Insight</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__legal">
+    <p>Informasi di situs ini bersifat umum dan tidak dimaksudkan sebagai nasihat hukum. Mengakses situs ini atau menghubungi kami tidak dengan sendirinya menimbulkan hubungan advokat dan klien.</p>
+    <p>&copy; {{ site.time | date: "%Y" }} Sagara Strategic Legal Advisory</p>
+  </div>
+</footer>

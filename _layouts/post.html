@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- assign kat = site.data.kategori | where: "id", page.category | first -%}
+{%- assign kata = content | number_of_words -%}
+{%- assign menit = kata | divided_by: 200 | plus: 1 -%}
+<article class="article">
+  <header class="article__header">
+    {% include awan.html class="page-hero__awan" %}
+    <div class="container container--narrow">
+      <p class="eyebrow"><a href="{{ '/legal-insight/' | relative_url }}?kategori={{ page.category }}">{{ kat.nama | default: "Legal Insight" }}</a></p>
+      <h1 class="article__title">{{ page.title }}</h1>
+      {% if page.description %}<p class="article__lead">{{ page.description }}</p>{% endif %}
+      <p class="article__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{% include tanggal.html date=page.date %}</time>
+        <span aria-hidden="true">·</span> {{ menit }} menit baca
+        {% if page.author %}<span aria-hidden="true">·</span> {{ page.author }}{% endif %}
+      </p>
+    </div>
+  </header>
+
+  <div class="container container--narrow">
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    {% if page.tags.size > 0 %}
+    <ul class="article__tags" aria-label="Tag">
+      {% for t in page.tags %}<li>#{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <aside class="article__sign">
+      <p class="article__sign-line">Firm you can trust — <strong>Sagara Strategic Legal Advisory</strong></p>
+      <p class="article__disclaimer">Tulisan ini bersifat informasi umum dan tidak dimaksudkan sebagai nasihat hukum atas suatu perkara tertentu. Setiap persoalan hukum perlu ditelaah berdasarkan fakta dan dokumennya masing-masing.</p>
+    </aside>
+
+    <nav class="article__nav" aria-label="Artikel lain">
+      {% if page.previous %}<a class="article__nav-link" href="{{ page.previous.url | relative_url }}"><span>Sebelumnya</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+      {% if page.next %}<a class="article__nav-link article__nav-link--next" href="{{ page.next.url | relative_url }}"><span>Berikutnya</span>{{ page.next.title }}</a>{% endif %}
+    </nav>
+    <p class="article__back"><a href="{{ '/legal-insight/' | relative_url }}">← Semua artikel Legal Insight</a></p>
+  </div>
+</article>

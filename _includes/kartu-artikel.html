@@ -1,0 +1,10 @@
+{%- assign p = include.post -%}
+{%- assign kat = site.data.kategori | where: "id", p.category | first -%}
+<article class="post-card" data-kategori="{{ p.category }}">
+  <a class="post-card__link" href="{{ p.url | relative_url }}">
+    <p class="post-card__kat">{{ kat.nama | default: "Legal Insight" }}</p>
+    <h3 class="post-card__title">{{ p.title }}</h3>
+    {% if p.description %}<p class="post-card__excerpt">{{ p.description }}</p>{% else %}<p class="post-card__excerpt">{{ p.excerpt | strip_html | truncatewords: 28 }}</p>{% endif %}
+    <p class="post-card__meta"><time datetime="{{ p.date | date_to_xmlschema }}">{% include tanggal.html date=p.date %}</time><span class="post-card__more">Baca <span aria-hidden="true">→</span></span></p>
+  </a>
+</article>

@@ -396,6 +396,6 @@ img.awan { height: auto; display: block; }
 @media (max-width: 900px) {
   .hero__inner { position: relative; }
   .hero__art { position: absolute; top: auto; bottom: 60px; right: var(--gutter); order: 0; justify-content: flex-end; pointer-events: none; }
-  .hero__art .awan { width: min(140px, 32vw); max-width: none; opacity: .22; }
+  .hero__art .awan { width: min(140px, 32vw); max-width: none; opacity: .7; }
   .hero__awan--2 { display: none !important; }
 }

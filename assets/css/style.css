@@ -342,3 +342,22 @@ img.awan { height: auto; display: block; }
 .section__awan { width: 380px; opacity: .1; }
 .page-hero__awan { width: 420px; right: -50px; bottom: 10px; opacity: .2; }
 .site-footer__awan { width: 340px; opacity: .07; }
+
+/* ---------- Permasalahan + blok konsultasi ---------- */
+.problems .section__head { margin-bottom: 44px; }
+.problems__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.problem { background: var(--paper); border: 1px solid var(--line); border-left: 2px solid var(--gold); padding: 26px 26px 24px; display: flex; gap: 18px; align-items: flex-start; }
+.problem__num { font-family: var(--display); font-size: 30px; line-height: 1; color: var(--gold); flex: none; }
+.problem p { margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--navy); }
+@media (max-width: 960px) { .problems__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .problems__grid { grid-template-columns: 1fr; } }
+.cta-band { position: relative; overflow: hidden; background: var(--navy); color: #fff; padding: 56px 0; }
+.cta-band__awan { position: absolute; width: 360px; right: -40px; top: 50%; transform: translateY(-50%); opacity: .14; }
+.cta-band__inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.cta-band__title { font-size: clamp(28px, 3.2vw, 40px); font-weight: 500; }
+@media (max-width: 640px) { .cta-band__inner { flex-direction: column; align-items: flex-start; } }
+
+/* Muncul bertahap saat digulir */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }

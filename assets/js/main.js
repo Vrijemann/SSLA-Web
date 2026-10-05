@@ -1,4 +1,23 @@
 (function () {
+  document.documentElement.classList.add('js');
+
+  // Elemen muncul bertahap saat digulir
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && items.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, sibs = el.parentElement.querySelectorAll(':scope > .reveal');
+        var idx = Array.prototype.indexOf.call(sibs, el);
+        el.style.transitionDelay = (idx > 0 ? idx * 0.12 : 0) + 's';
+        el.classList.add('is-visible');
+        io.unobserve(el);
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-visible'); });
+  }
   // Header berubah solid saat halaman digulir
   var header = document.getElementById('siteHeader');
   if (header && !header.classList.contains('is-solid')) {

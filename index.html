@@ -225,15 +225,14 @@ title: Sagara Strategic Legal Advisory
   <div class="container split">
     <div class="split__head">
       <p class="eyebrow eyebrow--light">Kontak</p>
-      <h2 class="section__title">Mari mendiskusikan kebutuhan hukum Anda.</h2>
+      <h2 class="section__title">Mari Diskusikan kebutuhan hukum Anda.</h2>
       <p class="section__lead">Kami menerima konsultasi berdasarkan janji temu. Silakan hubungi kami melalui telepon atau email untuk mengatur waktu pertemuan.</p>
     </div>
     <div class="contact">
       <div class="contact__block">
         <h3>Kantor</h3>
         <address>
-          <strong>{{ site.firma.kantor }}</strong><br>
-          {% for baris in site.firma.alamat %}{{ baris }}<br>{% endfor %}
+          {% for baris in site.firma.alamat %}{% if forloop.first %}<strong>{{ baris }}</strong>{% else %}{{ baris }}{% endif %}<br>{% endfor %}
         </address>
         <a class="link-arrow link-arrow--light" href="{{ site.firma.peta }}" target="_blank" rel="noopener">Lihat di peta <span aria-hidden="true">→</span></a>
       </div>

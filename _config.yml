@@ -18,7 +18,6 @@ baseurl: "/SSLA-Web"
 
 # Data kantor (dipakai di bagian Kontak dan footer)
 firma:
-  kantor: Infiniti Office
   alamat:
     - Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304
     - Sudirman Central Business District (SCBD)

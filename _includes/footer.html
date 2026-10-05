@@ -17,8 +17,9 @@
       <h2 class="site-footer__heading">Hubungi</h2>
       <ul class="site-footer__list">
         {% for t in site.firma.telepon %}<li><a href="tel:{{ t.nomor }}">{{ t.label }}</a></li>{% endfor %}
-        <li><a href="mailto:{{ site.firma.email }}">{{ site.firma.email }}</a></li>
+        <li><a href="{{ site.firma.janji_temu }}">{{ site.firma.email }}</a></li>
         <li><a href="{{ site.firma.linkedin }}" rel="noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="{{ site.firma.instagram }}" rel="noopener" target="_blank">Instagram</a></li>
       </ul>
     </div>
     <div>

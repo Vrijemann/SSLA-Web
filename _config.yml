@@ -30,6 +30,8 @@ firma:
       nomor: "+622158905002"
   email: info@sagarastrategic.com
   linkedin: https://www.linkedin.com/company/sagara-strategic-legal-advisory/
+  instagram: https://www.instagram.com/ssla_id/
+  janji_temu: "mailto:info@sagarastrategic.com?subject=Request%20for%20Appointment&cc=auliaguzasiah@sagarastrategic.com&body=Silakan%20ceritakan%20permasalahan%20hukum%20apa%20yang%20hendak%20anda%20konsultasikan%20dan%20tolong%20cantumkan%20No.%20Hp%2FWhatsapp%20yang%20bisa%20dihubungi."
   peta: https://www.google.com/maps/search/?api=1&query=Gedung+Bursa+Efek+Indonesia+Tower+1+SCBD+Jakarta
 
 # Artikel Legal Insight
@@ -43,6 +45,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 feed:
   path: legal-insight/feed.xml

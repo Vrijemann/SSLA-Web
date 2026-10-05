@@ -4,6 +4,8 @@
   nama: Litigasi & Sengketa Bisnis
 - id: kepailitan-pkpu
   nama: Kepailitan & PKPU
+- id: kontrak
+  nama: Kontrak & Transaksi Bisnis
 - id: arbitrase
   nama: Arbitrase & Penyelesaian Alternatif
 - id: kepatuhan

@@ -432,3 +432,13 @@ img.awan { height: auto; display: block; }
 
 /* ---------- Awan footer dipindah ke kiri (dicerminkan agar menghadap ke dalam) ---------- */
 .site-footer__awan { right: auto; left: -40px; transform: scaleX(-1); }
+
+/* ---------- Isi artikel Legal Insight rata kanan-kiri (judul, deskripsi, subjudul, kutipan tetap) ---------- */
+@media (min-width: 768px) {
+  .prose > p,
+  .prose li,
+  .article__disclaimer {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}

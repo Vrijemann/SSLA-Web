@@ -415,30 +415,28 @@ img.awan { height: auto; display: block; }
 @media (max-width: 640px) { .wordmark { --wm: 48px; } }
 
 /* ---------- Paragraf rata kanan-kiri (justify) ----------
-   Hanya di layar >= 768px. Di ponsel kolomnya terlalu sempit dan browser
-   belum bisa memenggal kata bahasa Indonesia, sehingga justify memunculkan
-   celah lebar antarkata; di sana teks tetap rata kiri. */
-@media (min-width: 768px) {
-  .split__body p,
-  .steps__item p,
-  .practice > p:not(.practice__label),
-  .partner__body p:not(.partner__role),
-  .associate p:not(.partner__role),
-  .post-card__excerpt {
-    text-align: justify;
-    text-justify: inter-word;
-  }
+   Berlaku di semua ukuran layar, termasuk ponsel. */
+.split__body p,
+.steps__item p,
+.practice > p:not(.practice__label),
+.partner__body p:not(.partner__role),
+.associate p:not(.partner__role),
+.post-card__excerpt {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* ---------- Awan footer dipindah ke kiri (dicerminkan agar menghadap ke dalam) ---------- */
 .site-footer__awan { right: auto; left: -40px; transform: scaleX(-1); }
 
 /* ---------- Isi artikel Legal Insight rata kanan-kiri (judul, deskripsi, subjudul, kutipan tetap) ---------- */
-@media (min-width: 768px) {
-  .prose > p,
-  .prose li,
-  .article__disclaimer {
-    text-align: justify;
-    text-justify: inter-word;
-  }
+.prose > p,
+.prose li,
+.article__disclaimer {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }

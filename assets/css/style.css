@@ -399,3 +399,19 @@ img.awan { height: auto; display: block; }
   .hero__art .awan { width: min(140px, 32vw); max-width: none; opacity: .7; }
   .hero__awan--2 { display: none !important; }
 }
+
+/* ---------- Garis tiga pada wordmark: proporsi mengikuti logo asli ----------
+   Logo asli: garis tengah 133, garis samping 71 (±53%), tebal ±6,5 (±5%),
+   jarak antar-garis ±29 (±22% dari tinggi garis tengah); garis samping sejajar di tengah. */
+.wordmark__bars { height: 52px; gap: 11px; align-items: center; }
+.wordmark__bars i { width: 2.5px; }
+.wordmark__bars i:nth-child(1), .wordmark__bars i:nth-child(3) { height: 28px; }
+.wordmark__bars i:nth-child(2) { height: 52px; }
+.wordmark { gap: 18px; }
+@media (max-width: 640px) {
+  .wordmark__bars { height: 42px; gap: 9px; }
+  .wordmark__bars i { width: 2px; }
+  .wordmark__bars i:nth-child(1), .wordmark__bars i:nth-child(3) { height: 22px; }
+  .wordmark__bars i:nth-child(2) { height: 42px; }
+  .wordmark { gap: 14px; }
+}

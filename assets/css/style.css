@@ -429,3 +429,6 @@ img.awan { height: auto; display: block; }
     text-justify: inter-word;
   }
 }
+
+/* ---------- Awan footer dipindah ke kiri (dicerminkan agar menghadap ke dalam) ---------- */
+.site-footer__awan { right: auto; left: -40px; transform: scaleX(-1); }

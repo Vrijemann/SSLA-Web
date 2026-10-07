@@ -1,6 +1,6 @@
 ---
 title: "Uang Muka Sudah Dibayar, Tapi Apakah Anda Benar-Benar Sudah Mengenal Calon Mitranya?"
-date: 2026-10-07 12:10:00 +0700
+date: 2026-10-07 12:00:00 +0700
 category: kepatuhan
 description: "Due diligence sebaiknya tidak dilewatkan, terutama untuk memastikan bahwa calon mitra Anda adalah pihak yang benar-benar dapat dipercaya."
 author: Aulia Guzasiah

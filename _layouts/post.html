@@ -35,6 +35,16 @@ layout: default
       <p class="article__disclaimer">Tulisan ini bersifat informasi umum dan tidak dimaksudkan sebagai nasihat hukum atas suatu perkara tertentu. Setiap persoalan hukum perlu ditelaah berdasarkan fakta dan dokumennya masing-masing.</p>
     </aside>
 
+    {% if kat.layanan %}
+    <aside class="article__layanan" aria-label="Layanan terkait">
+      <p class="article__layanan-label">Layanan terkait</p>
+      <p class="article__layanan-intro">Bila persoalan serupa sedang Anda hadapi, berikut pendampingan yang kami jalankan:</p>
+      <ul class="article__layanan-list">
+        {% for l in kat.layanan %}<li><a class="link-arrow" href="{{ l.url | relative_url }}">{{ l.nama }} <span aria-hidden="true">→</span></a></li>{% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+
     <nav class="article__nav" aria-label="Artikel lain">
       {% if page.previous %}<a class="article__nav-link" href="{{ page.previous.url | relative_url }}"><span>Sebelumnya</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
       {% if page.next %}<a class="article__nav-link article__nav-link--next" href="{{ page.next.url | relative_url }}"><span>Berikutnya</span>{{ page.next.title }}</a>{% endif %}

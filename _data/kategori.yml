@@ -1,15 +1,33 @@
 # Kategori Legal Insight.
 # "id" dipakai di setiap artikel (baris "category:"); "nama" adalah yang tampil di situs.
+# "layanan" (opsional) = halaman layanan yang ditautkan di akhir artikel kategori tersebut.
 - id: litigasi
   nama: Litigasi & Sengketa Bisnis
+  layanan:
+    - nama: Sengketa Bisnis & Litigasi Komersial
+      url: /layanan/sengketa-bisnis-litigasi-komersial/
 - id: kepailitan-pkpu
   nama: Kepailitan & PKPU
+  layanan:
+    - nama: Penagihan Piutang Bisnis
+      url: /layanan/penagihan-piutang-bisnis/
+    - nama: Pendampingan Kreditor dalam PKPU dan Kepailitan
+      url: /layanan/pendampingan-kreditor-pkpu-kepailitan/
 - id: kontrak
   nama: Kontrak & Transaksi Bisnis
+  layanan:
+    - nama: Penelaahan dan Penyusunan Kontrak Bisnis
+      url: /layanan/penelaahan-penyusunan-kontrak-bisnis/
 - id: arbitrase
   nama: Arbitrase & Penyelesaian Alternatif
+  layanan:
+    - nama: Sengketa Bisnis & Litigasi Komersial
+      url: /layanan/sengketa-bisnis-litigasi-komersial/
 - id: kepatuhan
   nama: Kepatuhan & Regulasi
+  layanan:
+    - nama: Penelaahan dan Penyusunan Kontrak Bisnis
+      url: /layanan/penelaahan-penyusunan-kontrak-bisnis/
 - id: advisory
   nama: General Legal Advisory
 - id: sagara-insider

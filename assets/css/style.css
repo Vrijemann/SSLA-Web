@@ -298,6 +298,11 @@ section[id] { scroll-margin-top: 64px; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.4em 0; }
 .article__tags { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .article__tags li { font-size: 13.5px; color: var(--muted); background: var(--cream); padding: 4px 12px; border-radius: 999px; }
+.article__layanan { margin: 32px 0 0; padding: 24px 28px; background: var(--cream); border-left: 2px solid var(--gold); }
+.article__layanan-label { font-size: 12.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
+.article__layanan-intro { color: var(--muted); font-size: 16px; margin: 0 0 12px; }
+.article__layanan-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.article__layanan-list .link-arrow { white-space: normal; }
 .article__sign { margin: 48px 0 0; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .article__sign-line { font-family: var(--display); font-size: 22px; font-style: italic; color: var(--navy); margin-bottom: 10px; }
 .article__sign-line strong { font-style: normal; font-weight: 600; }

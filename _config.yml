@@ -53,6 +53,10 @@ feed:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/img/sagara-og.png
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post

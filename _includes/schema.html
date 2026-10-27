@@ -1,0 +1,80 @@
+{%- comment -%}
+  Data terstruktur (schema.org) untuk mesin pencari dan AI.
+  - Beranda: profil firma hukum (LegalService).
+  - Halaman layanan (yang punya kembaran bahasa): profil layanan (Service).
+  Alamat, telepon, email, dan media sosial diambil dari _config.yml.
+{%- endcomment -%}
+{%- assign firma_id = '/#firma' | absolute_url -%}
+{%- if page.url == '/' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": {{ firma_id | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "logo": {{ '/assets/img/icon-512.png' | absolute_url | jsonify }},
+  "image": {{ '/assets/img/sagara-og.png' | absolute_url | jsonify }},
+  "description": {{ site.description | strip | jsonify }},
+  "slogan": {{ site.tagline | jsonify }},
+  "foundingDate": "2025",
+  "founder": { "@type": "Person", "name": "Aulia Guzasiah" },
+  "telephone": {{ site.firma.telepon[0].nomor | jsonify }},
+  "email": {{ site.firma.email | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304, SCBD Lot 9, Jl. Jend. Sudirman Kav. 52–53, Kel. Senayan, Kec. Kebayoran Baru",
+    "addressLocality": "Jakarta Selatan",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "12190",
+    "addressCountry": "ID"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  }],
+  "areaServed": { "@type": "Country", "name": "Indonesia" },
+  "knowsLanguage": ["id", "en"],
+  "sameAs": [{{ site.firma.linkedin | jsonify }}, {{ site.firma.instagram | jsonify }}],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Layanan Kami",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pendampingan Kreditor dalam PKPU dan Kepailitan", "url": {{ '/layanan/pendampingan-kreditor-pkpu-kepailitan/' | absolute_url | jsonify }} } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penagihan Piutang Bisnis", "url": {{ '/layanan/penagihan-piutang-bisnis/' | absolute_url | jsonify }} } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penelaahan dan Penyusunan Kontrak Bisnis", "url": {{ '/layanan/penelaahan-penyusunan-kontrak-bisnis/' | absolute_url | jsonify }} } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sengketa Bisnis & Litigasi Komersial", "url": {{ '/layanan/sengketa-bisnis-litigasi-komersial/' | absolute_url | jsonify }} } }
+    ]
+  }
+}
+</script>
+{%- elsif page.alt_en or page.alt_id -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "inLanguage": {{ page.lang | default: 'id' | jsonify }},
+  "serviceType": {{ page.title | jsonify }},
+  "areaServed": { "@type": "Country", "name": "Indonesia" },
+  "provider": {
+    "@type": "LegalService",
+    "@id": {{ firma_id | jsonify }},
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }},
+    "telephone": {{ site.firma.telepon[0].nomor | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304, SCBD Lot 9, Jl. Jend. Sudirman Kav. 52–53",
+      "addressLocality": "Jakarta Selatan",
+      "postalCode": "12190",
+      "addressCountry": "ID"
+    }
+  }
+}
+</script>
+{%- endif -%}

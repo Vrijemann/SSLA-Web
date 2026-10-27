@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ page.lang | default: 'id' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#152128">
   <script>document.documentElement.classList.add("js")</script>
   {% seo %}
+  {%- if page.alt_en or page.alt_id -%}
+    {%- if page.alt_en -%}{%- assign url_id = page.url -%}{%- assign url_en = page.alt_en -%}
+    {%- else -%}{%- assign url_id = page.alt_id -%}{%- assign url_en = page.url -%}{%- endif %}
+  <link rel="alternate" hreflang="id" href="{{ url_id | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ url_en | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ url_id | absolute_url }}">
+  {%- endif %}
   {% feed_meta %}
   <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}?v=2" type="image/png" sizes="32x32">
   <link rel="icon" href="{{ '/assets/img/favicon-16.png' | relative_url }}?v=2" type="image/png" sizes="16x16">

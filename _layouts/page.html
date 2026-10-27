@@ -7,6 +7,7 @@ layout: default
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
     {% if page.lead %}<p class="page-hero__lead">{{ page.lead }}</p>{% endif %}
+    {% if page.alt_en %}<p class="eyebrow eyebrow--light" style="margin: 24px 0 0;"><a href="{{ page.alt_en | relative_url }}" hreflang="en" lang="en">English <span aria-hidden="true">→</span></a></p>{% elsif page.alt_id %}<p class="eyebrow eyebrow--light" style="margin: 24px 0 0;"><a href="{{ page.alt_id | relative_url }}" hreflang="id" lang="id">Bahasa Indonesia <span aria-hidden="true">→</span></a></p>{% endif %}
   </div>
 </section>
 {{ content }}

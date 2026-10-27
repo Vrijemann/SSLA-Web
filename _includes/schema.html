@@ -1,53 +1,101 @@
 {%- comment -%}
   Data terstruktur (schema.org) untuk mesin pencari dan AI.
-  - Beranda: profil firma hukum (LegalService).
+  - Beranda (ID dan EN): profil firma hukum (LegalService) dan profil pendiri (Person).
   - Halaman layanan (yang punya kembaran bahasa): profil layanan (Service).
   Alamat, telepon, email, dan media sosial diambil dari _config.yml.
 {%- endcomment -%}
 {%- assign firma_id = '/#firma' | absolute_url -%}
-{%- if page.url == '/' -%}
+{%- assign pendiri_id = '/#aulia-guzasiah' | absolute_url -%}
+{%- if page.url == '/' or page.url == '/en/' -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LegalService",
-  "@id": {{ firma_id | jsonify }},
-  "name": {{ site.title | jsonify }},
-  "url": {{ '/' | absolute_url | jsonify }},
-  "logo": {{ '/assets/img/icon-512.png' | absolute_url | jsonify }},
-  "image": {{ '/assets/img/sagara-og.png' | absolute_url | jsonify }},
-  "description": {{ site.description | strip | jsonify }},
-  "slogan": {{ site.tagline | jsonify }},
-  "foundingDate": "2025",
-  "founder": { "@type": "Person", "name": "Aulia Guzasiah" },
-  "telephone": {{ site.firma.telepon[0].nomor | jsonify }},
-  "email": {{ site.firma.email | jsonify }},
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304, SCBD Lot 9, Jl. Jend. Sudirman Kav. 52–53, Kel. Senayan, Kec. Kebayoran Baru",
-    "addressLocality": "Jakarta Selatan",
-    "addressRegion": "DKI Jakarta",
-    "postalCode": "12190",
-    "addressCountry": "ID"
-  },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "17:00"
-  }],
-  "areaServed": { "@type": "Country", "name": "Indonesia" },
-  "knowsLanguage": ["id", "en"],
-  "sameAs": [{{ site.firma.linkedin | jsonify }}, {{ site.firma.instagram | jsonify }}],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Layanan Kami",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pendampingan Kreditor dalam PKPU dan Kepailitan", "url": {{ '/layanan/pendampingan-kreditor-pkpu-kepailitan/' | absolute_url | jsonify }} } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penagihan Piutang Bisnis", "url": {{ '/layanan/penagihan-piutang-bisnis/' | absolute_url | jsonify }} } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penelaahan dan Penyusunan Kontrak Bisnis", "url": {{ '/layanan/penelaahan-penyusunan-kontrak-bisnis/' | absolute_url | jsonify }} } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sengketa Bisnis & Litigasi Komersial", "url": {{ '/layanan/sengketa-bisnis-litigasi-komersial/' | absolute_url | jsonify }} } }
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": {{ firma_id | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "logo": {{ '/assets/img/icon-512.png' | absolute_url | jsonify }},
+      "image": {{ '/assets/img/sagara-og.png' | absolute_url | jsonify }},
+      "description": {{ page.description | default: site.description | strip | jsonify }},
+      "disambiguatingDescription": "Boutique law firm in Jakarta, Indonesia, founded by Indonesian advocate, receiver and administrator Aulia Guzasiah, advising creditors, domestic businesses and foreign companies on bankruptcy and PKPU, debt recovery, commercial contracts and commercial disputes.",
+      "slogan": "Firm You Can Trust",
+      "foundingDate": "2025",
+      "founder": { "@id": {{ pendiri_id | jsonify }} },
+      "telephone": {{ site.firma.telepon[0].nomor | jsonify }},
+      "email": {{ site.firma.email | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gedung Bursa Efek Indonesia, Tower 1, Lt. 3, Unit 304, SCBD Lot 9, Jl. Jend. Sudirman Kav. 52–53, Kel. Senayan, Kec. Kebayoran Baru",
+        "addressLocality": "Jakarta Selatan",
+        "addressRegion": "DKI Jakarta",
+        "postalCode": "12190",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }],
+      "areaServed": { "@type": "Country", "name": "Indonesia" },
+      "knowsLanguage": ["id", "en"],
+      "knowsAbout": [
+        "Bankruptcy and PKPU (suspension of debt payment obligations) proceedings in Indonesia",
+        "Creditor representation, claim filing and verification, and renvoi proceedings",
+        "Debt recovery in Indonesia",
+        "Commercial contract review and drafting, including bilingual contracts",
+        "Commercial litigation and arbitration in Indonesia",
+        "Legal counsel for foreign companies and foreign-owned (PMA) companies in Indonesia",
+        "Expatriate (TKA) employment compliance in Indonesia"
+      ],
+      "sameAs": [{{ site.firma.linkedin | jsonify }}, {{ site.firma.instagram | jsonify }}],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Layanan Kami",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pendampingan Kreditor dalam PKPU dan Kepailitan", "alternateName": "Creditor Representation in PKPU and Bankruptcy", "url": {{ '/layanan/pendampingan-kreditor-pkpu-kepailitan/' | absolute_url | jsonify }} } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penagihan Piutang Bisnis", "alternateName": "Debt Recovery in Indonesia", "url": {{ '/layanan/penagihan-piutang-bisnis/' | absolute_url | jsonify }} } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penelaahan dan Penyusunan Kontrak Bisnis", "alternateName": "Commercial Contract Review and Drafting", "url": {{ '/layanan/penelaahan-penyusunan-kontrak-bisnis/' | absolute_url | jsonify }} } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sengketa Bisnis & Litigasi Komersial", "alternateName": "Commercial Disputes and Litigation", "url": {{ '/layanan/sengketa-bisnis-litigasi-komersial/' | absolute_url | jsonify }} } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pendampingan Hukum bagi Bisnis Asing di Indonesia", "alternateName": "Legal Counsel for Foreign Businesses in Indonesia", "url": {{ '/layanan/pendampingan-hukum-bisnis-asing/' | absolute_url | jsonify }} } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ pendiri_id | jsonify }},
+      "name": "Aulia Guzasiah",
+      "honorificSuffix": "S.H., M.H.",
+      "jobTitle": "Founding Partner; Advocate, Receiver and Administrator",
+      "worksFor": { "@id": {{ firma_id | jsonify }} },
+      "image": {{ '/assets/img/tim/aulia-guzasiah.jpg' | absolute_url | jsonify }},
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Gadjah Mada" },
+      "knowsLanguage": ["id", "en"],
+      "knowsAbout": [
+        "Bankruptcy and PKPU",
+        "Debt recovery",
+        "Commercial litigation",
+        "Arbitration",
+        "Commercial contracts"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Advocate licence",
+          "recognizedBy": { "@type": "Organization", "name": "PERADI (Perhimpunan Advokat Indonesia)" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Receiver (Kurator) and Administrator (Pengurus) registration",
+          "recognizedBy": { "@type": "GovernmentOrganization", "name": "Kementerian Hukum Republik Indonesia (Ministry of Law of the Republic of Indonesia)" }
+        }
+      ],
+      "memberOf": { "@type": "Organization", "name": "AKPI (Asosiasi Kurator dan Pengurus Indonesia)" },
+      "sameAs": ["https://www.linkedin.com/in/auliaguzasiah/"]
+    }
+  ]
 }
 </script>
 {%- elsif page.alt_en or page.alt_id -%}

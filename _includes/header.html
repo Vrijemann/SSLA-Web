@@ -11,6 +11,7 @@
       <a href="{{ home }}#layanan">Layanan Kami</a>
       <a href="{{ home }}#tim">Tim Kami</a>
       <a href="{{ '/legal-insight/' | relative_url }}"{% if page.url contains '/legal-insight/' %} aria-current="page"{% endif %}>Legal Insight</a>
+      {% if page.lang == 'en' %}<a href="{{ home }}" hreflang="id" lang="id">ID</a>{% else %}<a href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">EN</a>{% endif %}
       <a class="site-nav__contact" href="{{ home }}#kontak">Kontak</a>
     </nav>
   </div>

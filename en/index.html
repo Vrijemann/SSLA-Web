@@ -1,0 +1,56 @@
+---
+layout: page
+lang: en
+locale: en_US
+title: Indonesian Law Firm in Jakarta
+eyebrow: Sagara Strategic Legal Advisory · Jakarta
+lead: A Jakarta-based boutique law firm advising creditors, Indonesian businesses, and foreign companies on bankruptcy and PKPU, debt recovery, commercial contracts, and commercial disputes.
+description: Sagara Strategic Legal Advisory is a boutique law firm in Jakarta, Indonesia — bankruptcy and PKPU, debt recovery, commercial contracts, commercial litigation and arbitration, and legal counsel for foreign businesses. We work in English and Indonesian.
+permalink: /en/
+alt_id: /
+---
+{%- assign home = '/' | relative_url -%}
+
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <div class="prose">
+
+      <h2>The firm</h2>
+      <p>Founded in 2025, Sagara Strategic Legal Advisory is a boutique law firm based in the Sudirman Central Business District (SCBD), Jakarta. We act for creditors and businesses when a business relationship goes wrong: a partner fails to pay, a debtor enters PKPU or bankruptcy, a contract turns out to be unenforceable, or a dispute can no longer be settled internally.</p>
+      <p>We work in Indonesian and English, and advise both Indonesian companies and foreign companies doing business in Indonesia.</p>
+
+      <h2>Our services</h2>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>When it helps</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="{{ '/en/pkpu-bankruptcy-creditor-representation/' | relative_url }}">Creditor Representation in PKPU and Bankruptcy</a></td><td>Your debtor or business partner has been placed under PKPU or declared bankrupt</td></tr>
+          <tr><td><a href="{{ '/en/debt-recovery-indonesia/' | relative_url }}">Debt Recovery in Indonesia</a></td><td>A receivable is overdue and in-house collection has stalled</td></tr>
+          <tr><td><a href="{{ '/en/commercial-contract-review-indonesia/' | relative_url }}">Commercial Contract Review and Drafting</a></td><td>You are about to sign, or need to enforce, a contract with an Indonesian party</td></tr>
+          <tr><td><a href="{{ '/en/commercial-litigation-indonesia/' | relative_url }}">Commercial Disputes and Litigation</a></td><td>A dispute needs to go to court or arbitration, or an arbitral award needs enforcing</td></tr>
+          <tr><td><a href="{{ '/en/foreign-business-legal-counsel-indonesia/' | relative_url }}">Legal Counsel for Foreign Businesses</a></td><td>You run a foreign or foreign-owned (PMA) company in Indonesia, including the employment of foreign workers</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How we work</h2>
+      <p>Legal problems rarely arrive without warning. Every engagement, from reviewing a single clause to representing a client in court, runs in the same three layers:</p>
+      <ul>
+        <li><strong>Identification</strong>: mapping the weak points early, such as one-sided contract terms, receivables that start to slip, or obligations that have not been met.</li>
+        <li><strong>Assessment</strong>: measuring the legal and commercial exposure, then weighing the most rational route: negotiation, litigation, arbitration, or bankruptcy and PKPU proceedings.</li>
+        <li><strong>Management</strong>: carrying out the chosen strategy through to completion, and closing the same gap so it does not recur.</li>
+      </ul>
+
+      <h2>Founder</h2>
+      <p><strong>Aulia Guzasiah, S.H., M.H.</strong> is the Founding Partner of Sagara Strategic Legal Advisory. He is an Indonesian advocate licensed by PERADI, and a receiver (<em>kurator</em>) and administrator (<em>pengurus</em>) registered with the Ministry of Law of the Republic of Indonesia and a member of AKPI, the Indonesian association of receivers and administrators.</p>
+      <p>He holds a Master of Laws from Universitas Gadjah Mada and previously practised at Nindyo &amp; Associates. His work covers civil and commercial disputes at various levels of court and in arbitration, as well as creditor work in PKPU and bankruptcy proceedings. Because he is qualified to act as a receiver and administrator, he understands insolvency proceedings from both sides: the interests of the parties, and how receivers and administrators actually work.</p>
+
+      <h2>Contact</h2>
+      <p>{% for baris in site.firma.alamat %}{{ baris }}<br>{% endfor %}</p>
+      <p>Consultations by appointment, Monday to Friday, 09:00–17:00 Jakarta time (GMT+7).<br>
+      Telephone: {% for t in site.firma.telepon %}<a href="tel:{{ t.nomor }}">{{ t.label }}</a>{% endfor %}<br>
+      Email: <a href="mailto:{{ site.firma.email }}?subject=Consultation%20request">{{ site.firma.email }}</a></p>
+      <p><a class="link-arrow" href="{{ '/legal-insight/' | relative_url }}">Legal Insight (articles in Indonesian) <span aria-hidden="true">→</span></a></p>
+    </div>
+  </div>
+</section>
